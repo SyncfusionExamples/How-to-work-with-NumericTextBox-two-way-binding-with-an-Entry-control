@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:Synfusion="clr-namespace:Syncfusion.SfNumericTextBox.XForms;assembly=Syncfusion.SfNumericTextBox.XForms" 
+             xmlns:local="clr-namespace:NumericTextBox_Binding"
+             mc:Ignorable="d"
+             x:Class="NumericTextBox_Binding.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ObjectConverter x:Key="valueconverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid  BackgroundColor="#E4EAF0" Padding="0,30,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="firstNumeric"   
+                   Text="NumericTextBox" 
+                   FontSize="20"
+                   HorizontalOptions="Center"  
+                   FontAttributes="Bold" 
+                   HorizontalTextAlignment="Start" 
+                   VerticalTextAlignment="Start"/>
+            
+            <Synfusion:SfNumericTextBox 
+                Grid.Row="1" 
+                WidthRequest="180"
+                HorizontalOptions="Center" 
+                AllowNull="true" 
+                BorderColor="Blue"
+                TextColor="Maroon"
+                x:Name="sfNumericTextBox"
+                Value="{Binding ValueNumeric,Mode=TwoWay,Converter={StaticResource valueconverter}}" 
+                FormatString="p" 
+                ValueChangeMode="OnKeyFocus"
+                PercentDisplayMode="Value" 
+                FontSize="20" />
+
+            <Label x:Name="secondNumeric" 
+                   Grid.Row="2"
+                   Text="Entry"
+                   HorizontalOptions="Center" 
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Start"/>
+            
+            <Entry 
+                Text="{Binding ValueNumeric,Mode=TwoWay}"  
+                Grid.Row="3" 
+                WidthRequest="180"
+                HorizontalOptions="Center"
+                FontSize="20"  />
+        </Grid >
+    </ContentPage.Content>
+</ContentPage>
