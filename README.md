@@ -13,7 +13,7 @@ Syncfusion also provides Xamarin Toolbox. Using this toolbox, you can drag the S
 
 If you prefer to manually reference the assemblies instead referencing from NuGet, add the following assemblies in respective projects.
 
-# Create a simple SfNumericTextBox
+## Create a simple SfNumericTextBox
 The SfNumericTextBox control is configured entirely in C# code or by using XAML markup.
 
 The following steps explain how to create a SfNumericTextBox and configure its elements,
@@ -32,7 +32,7 @@ xmlns:syncfusion="clr-namespace:Syncfusion.SfNumericTextBox.XForms;assembly=Sync
      <syncfusion:SfNumericTextBox />	
 </ContentPage.Content>
 ```
-# How to work with NumericTextBox two way binding with an Entry control
+## How to work with NumericTextBox two way binding with an Entry control
 Create a ViewModel class and add a property to bind the Value property in NumericTextBox as mentioned in the below code sample.
 **[C#]**
 ```
